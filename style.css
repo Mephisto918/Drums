@@ -1,0 +1,135 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    color: var(--font-color);
+}
+
+:root{
+    --font-color: white;
+    --bg: black;
+    --g-start: black;
+    --g-end: gray;
+}
+
+body{
+    /* background-image: linear-gradient(45deg, var(--g-start) 30rem, var(--g-end)); */
+    /* background-image: radial-gradient(
+      circle at 45deg,
+      black,
+      gray ); */
+    /* background-image: radial-gradient( circle at 45deg, black, gray); */
+    /* background-image: radial-gradient(circle at center, black, gray); */
+    background-image: conic-gradient(from 45deg, black 34deg, gray);
+    height: 100dvh;
+    color: var(--font-color);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 2rem;
+    
+    font-size: 20pt;
+    font-family: monospace;
+}
+
+#title{
+  text-shadow: -3px 7px 2px rgba(0,0,0,0.4),
+                0px 8px 13px rgba(0,0,0,0.1),
+                0px 18px 23px rgba(0,0,0,0.1)
+}
+.set{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.drum{
+    width: 5rem;
+    aspect-ratio: 1/1;
+    background-color: rgba(50, 50, 50, 0.3);
+
+
+    color: black;
+
+    border-radius: 10px;
+    border-style: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    font-size: 20pt;
+    font-family: monospace;
+
+  &:hover{
+    background: color-mix(in srgb, var(--g-start) 20%, var(--g-end) 50%);
+    backdrop-filter: blur(0.5rem);
+    animation: zoom-in .1s ease forwards;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+    /* color:rgba(0,0,0,0.5); text-shadow:3px 3px 0 #aaa;; */
+    text-shadow: -1px 4px 10px #c4b59d, 0 -2px 1px #fff;
+  }
+  &:not(:hover){
+      /* animation: zoom-out .2s ease forwards; */
+      color: white;
+      backdrop-filter: blur(0.5rem);
+  
+      box-shadow:
+       rgba(255, 255, 255, 0.07) 0px 1px 2px,
+       rgba(255, 255, 255, 0.07) 0px 2px 4px, 
+       rgba(255, 255, 255, 0.07) 0px 4px 8px, 
+       rgba(255, 255, 255, 0.07) 0px 8px 16px,
+       rgba(255, 255, 255, 0.07) 0px 16px 32px, 
+       rgba(255, 255, 255, 0.07) 0px 32px 64px;
+  
+       text-shadow: 2px 2px 2px #000000;
+  }
+
+  &:nth-child(1){
+    background-image: url('./src/DrumKitStartingFiles/images/tom1.png');
+  }
+  &:nth-child(2){
+    background-image: url('./src/DrumKitStartingFiles/images/tom2.png');
+  }
+  &:nth-child(3){
+    background-image: url('./src/DrumKitStartingFiles/images/tom3.png');
+  }
+  &:nth-child(4){
+    background-image: url('./src/DrumKitStartingFiles/images/tom4.png');
+  }
+  
+  &:nth-child(5){
+    background-image: url('./src/DrumKitStartingFiles/images/snare.png');
+  }
+  &:nth-child(6){
+    background-image: url('./src/DrumKitStartingFiles/images/crash.png');
+  }
+  &:nth-child(7){
+    background-image: url('./src/DrumKitStartingFiles/images/kick.png');
+  }
+}
+
+.zoom-in-anim{
+  animation: zoom-in 0.3s ease forwards;
+}
+.zoom-out-anim{
+  animation: zoom-out .4s ease forwards;
+}
+
+@keyframes zoom-in {
+    0% {
+      transform: scale(1, 1);
+    }
+    100% {
+      transform: scale(1.1, 1.1);
+    }
+}
+@keyframes zoom-out {
+    100% {
+      transform: scale(1, 1);
+    }
+    0% {
+      transform: scale(1.1, 1.1);
+    }
+}
